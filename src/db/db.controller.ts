@@ -10,6 +10,7 @@ export class DbController {
   create(@Body() body: {queryValue}) {
     const query = body.queryValue
     return this.dbService.search(query)
+    
   }
 
   @Post('/collection')
