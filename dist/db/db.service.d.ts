@@ -1,29 +1,19 @@
+import { Prisma } from '@prisma/client';
 import { PrismaService } from 'src/prisma/prisma.service';
+import { IProduct } from './dto';
 export declare class DbService {
     private readonly prisma;
     constructor(prisma: PrismaService);
-    search(query: any): import(".prisma/client").Prisma.PrismaPromise<{
+    createProduct(payload: IProduct): Prisma.Prisma__ProductClient<{
         id: number;
-        title: string;
-        price: string;
-        description: string;
-        sku: string;
-        marque: string;
-        type: string;
-        images: string;
-        featured_image: string;
-        weight: string;
-    }[]>;
-    collection(query: any): import(".prisma/client").Prisma.PrismaPromise<{
-        id: number;
-        title: string;
-        price: string;
-        description: string;
-        sku: string;
-        marque: string;
-        type: string;
-        images: string;
-        featured_image: string;
-        weight: string;
-    }[]>;
+        receiver: string;
+        quantity: number;
+        unique_id: string;
+        reference: string;
+        model: string;
+        gate: string;
+        supplier_code: string;
+        createdAt: Date;
+        updatedAt: Date;
+    }, never, import("@prisma/client/runtime/library").DefaultArgs>;
 }

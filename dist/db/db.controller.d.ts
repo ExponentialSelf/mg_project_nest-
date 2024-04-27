@@ -2,32 +2,18 @@ import { DbService } from './db.service';
 export declare class DbController {
     private readonly dbService;
     constructor(dbService: DbService);
-    create(body: {
-        queryValue: any;
-    }): import(".prisma/client").Prisma.PrismaPromise<{
+    create(unique_id: string, receiver: string, quantity: number, reference: string, model: string, gate: string, supplier_code: string): import(".prisma/client").Prisma.Prisma__ProductClient<{
         id: number;
-        title: string;
-        price: string;
-        description: string;
-        sku: string;
-        marque: string;
-        type: string;
-        images: string;
-        featured_image: string;
-        weight: string;
-    }[]>;
-    collection(body: {
-        queryValue: any;
-    }): import(".prisma/client").Prisma.PrismaPromise<{
-        id: number;
-        title: string;
-        price: string;
-        description: string;
-        sku: string;
-        marque: string;
-        type: string;
-        images: string;
-        featured_image: string;
-        weight: string;
-    }[]>;
+        receiver: string;
+        quantity: number;
+        unique_id: string;
+        reference: string;
+        model: string;
+        gate: string;
+        supplier_code: string;
+        createdAt: Date;
+        updatedAt: Date;
+    }, never, import("@prisma/client/runtime/library").DefaultArgs> | {
+        error: string;
+    };
 }

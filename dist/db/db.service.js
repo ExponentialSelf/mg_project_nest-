@@ -16,24 +16,9 @@ let DbService = class DbService {
     constructor(prisma) {
         this.prisma = prisma;
     }
-    search(query) {
-        const result = this.prisma.product.findMany({
-            take: 100,
-            where: {
-                title: {
-                    contains: query
-                }
-            }
-        });
-        return result;
-    }
-    collection(query) {
-        const result = this.prisma.product.findMany({
-            where: {
-                type: {
-                    contains: query
-                }
-            }
+    createProduct(payload) {
+        const result = this.prisma.product.create({
+            data: payload
         });
         return result;
     }
